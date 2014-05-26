@@ -1,0 +1,20 @@
+/* Dawn CSS Reset
+ * Version: 1.0 beta
+ * Update: 2009-07-27
+ * Author: mingelz
+ * URI: http://mingelz.com | http://www.cnblogs.com/mingelz
+ * License: http://creativecommons.org/licenses/by-sa/3.0/
+ */
+body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,th,td,p,blockquote,pre,form,fieldset,legend,input,button,textarea,hr{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+li{list-style:none;}
+fieldset,img{border:0;}
+table{border-collapse:collapse;border-spacing:0;}
+q:before,q:after{content:'';}
+abbr[title]{border-bottom:1px dotted;cursor:help;}
+address,cite,dfn,em,var{font-style:normal;}
+button,input,select,textarea{font-size:100%;}
+legend{color:#000;}
+code,kbd,samp{font-family:"Courier New",monospace;}
+hr{border:none;height:1px;}
+body,button,input,select,textarea{font:12px/1 Arial,Tahoma,Helvetica,SimSun,san-serif;}

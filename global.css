@@ -1,0 +1,282 @@
+@charset 'utf-8';
+
+/*
+名称：全局样式模块
+维护：王文 wangwen1220#139.com
+依赖：base.css
+日期：2013-5-14
+*/
+
+/* Global
+----------------------------------------------------------------------------- */
+/* 当不是 https 时，可以把 # 换成 about: blank 以提升效率 */
+html {
+  _background-image: url('about: blank');
+  _background-attachment: fixed;
+}
+/* 默认文字和背景颜色 */
+body {
+	color: #000;
+	font: 12px/1.5 \5b8b\4f53,arial;
+	_word-wrap: break-word;/* 防止 IE6 连字符撑开布局 */
+}
+
+/* 链接样式 */
+a, a:link {
+	color: inherit;
+}
+a:hover, a:active {
+	color: #CF0000;
+}
+
+/* 清除图片底部空白间隙；解决 IE6-7 图片缩放锯齿问题 */
+img {
+	vertical-align: top;
+	-ms-interpolation-mode: bicubic;
+}
+
+/* 默认表单样式 */
+input, textarea {
+	color: #999;
+}
+input:focus, textarea:focus {
+	color: #444;
+}
+
+/* 三角 */
+.w-arrow-wrapper {
+  position: relative;
+  padding-right: 12px;
+}
+.w-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  wmargin-top: -4px;
+  margin-top: -2px;
+  border: 4px solid transparent;
+  _border-color: #f7f7f7;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  wvertical-align: middle;
+  -moz-transition: -moz-transform .2s ease-in;
+  -o-transition: -o-transform .2s ease-in;
+  transition: transform 0.2s ease-in 0s;
+  cursor: pointer;
+}
+.w-arrow-up {
+  border-bottom-color: #444;
+}
+.w-arrow-down {
+  border-top-color: #444;
+}
+.w-arrow-wrapper:hover .w-arrow-up,
+.w-arrow-wrapper:hover .w-arrow-down {
+  -moz-transform: rotate(180deg);
+  -moz-transform-origin: 50% 30%;
+  -webkit-transform: rotate(180deg);
+  -webkit-transform-origin: 50% 30%;
+  -o-transform: rotate(180deg);
+  -o-transform-origin: 50% 30%;
+  transform: rotate(180deg);
+  transform-origin: 50% 30%;
+  /* filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); */
+}
+.w-arrow-left {
+  border-right-color: #444;
+}
+.w-arrow-right {
+  border-left-color: #444;
+}
+
+/* 盒阴影 */
+.shadowbox {
+  -moz-box-shadow: 3px 3px 4px #000;
+  -webkit-box-shadow: 3px 3px 4px #000;
+  box-shadow: 3px 3px 4px #000;
+  /* 但是，IE6、7、8不认识这段样式，所以我们会考虑用滤镜来实现这功能 */
+  /* For IE 8 */
+  -ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+  /* For IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+/* AD */
+.ad {
+  overflow: hidden;
+  background: #F9F9F9;
+}
+.ad-w728 {
+  width: 728px;
+}
+.ad-w250 {
+  width: 250px;
+}
+.ad-w300 {
+  width: 300px;
+}
+.ad-w490 {
+  width: 490px;
+}
+.ad-h90 {
+  height: 90px;
+}
+.ad-h250 {
+  height: 250px;
+}
+
+/* 分割线 */
+.hr {
+  clear: both;
+  margin: 5px 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+  border-bottom: 1px dotted #ccc;
+  font-size: 0;
+}
+
+/* 排版 */
+.highlight {
+  color: {HIGHLIGHTLINK};
+}
+#w .f12 {
+  font-size: 12px;
+}
+#w .f14 {
+  font-size: 14px;
+}
+#w .mt0 {
+  margin-top: 0;
+}
+#w .mt5 {
+  margin-top: 5px;
+}
+#w .mt8 {
+  margin-top: 8px;
+}
+#w .mt10 {
+  margin-top: 10px;
+}
+#w .mb0 {
+  margin-bottom: 0;
+}
+#w .mb5 {
+  margin-bottom: 5px;
+}
+#w .mb8 {
+  margin-bottom: 8px;
+}
+#w .mb10 {
+  margin-bottom: 10px;
+}
+
+/* TPL
+----------------------------------------------------------------------------- */
+/*
+@name: ui-layout
+@overview: 通用布局样式
+@require: null
+*/
+.ui-layout-main {
+	float: left;
+	width: 680px;
+}
+.ui-layout-side {
+	float: right;
+	width: 240px;
+}
+
+/* Layout
+----------------------------------------------------------------------------- */
+/** 整体布局 **/
+#header, #content, .ui-layout, .ui-box, .ui-gallery {
+	margin-left: auto;
+	margin-right: auto;
+}
+.ui-layout {
+	width: 960px;
+}
+.ui-gallery, .ui-box {
+	margin-top: 10px;
+	padding: 0 10px;
+	border: 1px solid #DFDFDF;
+}
+
+/** 页眉 **/
+#header a {
+	color: #333;
+}
+
+/* 图片居中 */
+.w-album-item .img {
+  display: block;
+  height: 146px;
+  line-height: 146px;
+  overflow: hidden;
+  /*border: 1px solid #ddd;*/
+  *font-size: 130px;
+  /*background-color: #000;*/
+}
+.w-album-item .img:after {
+  content: '';
+  vertical-align: middle;
+}
+/*.w-album-item-hover .img,
+.w-album-item:hover .img {
+  border-color: #fff;
+}*/
+.w-album-item .img img {
+  vertical-align: middle;
+}
+
+/* 去除 inline-block 空隙终极解决方案（2012年8月17日更新） */
+
+.dib-wrap {
+font-size:0;/* 所有浏览器 */
+*word-spacing:-1px;/* IE6、7 */
+}
+.dib-wrap .dib{
+font-size: 12px;
+letter-spacing: normal;
+word-spacing: normal;
+vertical-align:top;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+/* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
+.dib-wrap{
+letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
+}
+}
+.dib {
+display: inline-block;
+*display:inline;
+*zoom:1;
+}
+
+/* 其实在 YUI 3 中也全面运用了 inline-block 作为基础布局，YUI 3 是这样解决的： */
+
+.yui3-g {
+letter-spacing: -0.31em; /* webkit: collapse white-space between units */
+*letter-spacing: normal; /* reset IE < 8 */
+word-spacing: -0.43em; /* IE < 8 && gecko: collapse white-space between units */
+}
+
+.yui3-u {
+display: inline-block;
+zoom: 1; *display: inline; /* IE < 8: fake inline-block */
+letter-spacing: normal;
+word-spacing: normal;
+vertical-align: top;
+}
+
+/* IE6 - IE9 的 CSS Hack */
+.hack{
+color:#fff;background:#000;
+background:#06f\9;   /* all IE */
+background:#090\0;   /* IE8-9 */
+background:#090\0/;  /* IE8 only */
+*background:#f60;    /* IE6-7 */
+_background:#f00;    /* IE6 only */
+}
